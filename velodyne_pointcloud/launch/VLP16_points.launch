@@ -6,7 +6,7 @@
   <!-- declare arguments with default values -->
   <arg name="calibration" default="$(find velodyne_pointcloud)/params/VLP-16.yaml"/>
   <arg name="device_ip" default="" />
-  <arg name="frame_id" default="velodyne" />
+  <arg name="frame_id" default="velodyneLidar" />
   <arg name="manager" default="$(arg frame_id)_nodelet_manager" />
   <arg name="max_range" default="130.0" />
   <arg name="min_range" default="0.4" />
@@ -47,8 +47,8 @@
     <arg name="model" value="VLP16"/>
     <arg name="calibration" value="$(arg calibration)"/>
     <arg name="manager" value="$(arg manager)" />
-    <arg name="fixed_frame" value="" />
-    <arg name="target_frame" value="" />
+    <arg name="fixed_frame" value="world" />
+    <arg name="target_frame" value="$(arg frame_id)" />
     <arg name="max_range" value="$(arg max_range)"/>
     <arg name="min_range" value="$(arg min_range)"/>
     <arg name="organize_cloud" value="$(arg organize_cloud)"/>
